@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: deploy2nekoweb
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      # your build step here        
+      - name: build
+        uses: npm run build
+        
+      - name: deploy2nekoweb
+        uses: indiefellas/deploy2nekoweb@v4
+        with:
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+          nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+          nekoweb-folder: 'src'
+          directory: 'public'
