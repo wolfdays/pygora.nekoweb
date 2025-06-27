@@ -18,4 +18,4 @@ jobs:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
           nekoweb-folder: 'src'
-          directory: 'public'
+          directory: 'dist'
